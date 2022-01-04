@@ -4,43 +4,31 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { Content, Footer, Header, MenuItem, NavMenu } from './styles';
 import Logo from '../assets/d-d-d-djessica_ALTA.svg'
 import Image from 'next/image';
-import SideBar from '../components/sideBar/sideBar';
+import SideBar from '../components/menu/menu';
+import BurgerButton from '../components/burgerButton/burgerButton';
+import ShoppingBag from '@mui/icons-material/ShoppingBag'
 
 function HomePage() {
+	const [open, setOpen] = useState(false);
 	const items = [
-		{ name: 'home', label: 'Home' },
 		{
-			name: 'billing',
-			label: 'Billing',
+			name: 'kimonos',
+			label: 'Kimonos',
 			items: [
-				{ name: 'statements', label: 'Statements' },
-				{ name: 'reports', label: 'Reports' },
+				{ name: 'kimonosCurtos', label: 'Kimonos Curtos' },
+				{ name: 'kimonoMid', label: 'Kimonos Médios' },
 			],
 		},
-		{
-			name: 'settings',
-			label: 'Settings',
-			items: [
-				{ name: 'profile', label: 'Profile' },
-				{ name: 'insurance', label: 'Insurance' },
-				{
-					name: 'notifications',
-					label: 'Notifications',
-					items: [
-						{ name: 'email', label: 'Email' },
-						{
-							name: 'desktop',
-							label: 'Desktop',
-							items: [
-								{ name: 'schedule', label: 'Schedule' },
-								{ name: 'frequency', label: 'Frequency' },
-							],
-						},
-						{ name: 'sms', label: 'SMS' },
-					],
-				},
-			],
+		{ 
+			name: 'calcas', 
+			label: 'Calças',
+			items:[
+				{name: 'calcasPantalonas', label: 'Calças Pantalonas'}
+			]
 		},
+		{ name: 'vestidos', label: 'Vestidos' },
+		{ name: 'macacao', label: 'Macacão' },
+		{ name: 'macaquinho', label: 'Macaquinhos' }
 	]
 
 	
@@ -48,8 +36,11 @@ function HomePage() {
 		<div>
 			<Header>
 				<NavMenu>
+					<MenuItem style={{ float: 'left'}}>
+						<BurgerButton open={open} setOpen={setOpen} />
+					</MenuItem>
 					<Link href='/'>
-						<MenuItem style={{ float: 'left', padding: 0 }}>
+						<MenuItem style={{ paddingTop: 0}} >
 							<Image src={Logo} height={80} width={80} />
 						</MenuItem>
 					</Link>
@@ -60,17 +51,19 @@ function HomePage() {
 					</Link>
 					<Link href='/cart'>
 						<MenuItem>
-							Cart
+							<ShoppingBag/>
 						</MenuItem>
 					</Link>
 				</NavMenu>
 			</Header>
 			<Container style={{ height: '80vh' }} fluid>
 				<Row style={{ height: '100%' }}>
-					<SideBar items={items} />
-					<Content>
-						Content
-					</Content>
+					<Col>
+						<Content>
+							Content
+						</Content>
+					</Col>
+					<SideBar items={items} open={open} />
 				</Row>
 			</Container>
 			<Footer>

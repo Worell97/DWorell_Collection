@@ -1,6 +1,6 @@
 import { List, ListItem, ListItemText } from '@material-ui/core';
 import React, { useState } from 'react'
-import { SideBarWrapper, SubItem } from './styles';
+import { StyledMenu, SubItem } from './styles';
 
 
 function SideBarItem({label, items, depthStep = 10, depth = 0, ...rest}) {
@@ -27,9 +27,9 @@ function SideBarItem({label, items, depthStep = 10, depth = 0, ...rest}) {
   )
 }
 
-function SideBar({items, depthStep, depth}) {
+function SideBar({items, depthStep, depth, open}) {
   return (
-    <SideBarWrapper>
+    <StyledMenu open={open}>
       <List disablePadding dense>
         {items.map((sidebarItem, index) => (
           <SideBarItem 
@@ -40,7 +40,7 @@ function SideBar({items, depthStep, depth}) {
           />
         ))}
       </List>
-    </SideBarWrapper>
+    </StyledMenu>
   )
 }
 

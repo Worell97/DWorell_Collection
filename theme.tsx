@@ -1,0 +1,15 @@
+export const theme = {
+    primaryDark: '#0D0C1D',
+    primaryLight: '#EFFFFA',
+    primaryHover: '#343078',
+    mobile: '576px',    
+    primary: '#fbf3f3',
+    secondary: '#df9b9b',
+    beautyBush: '#EDC4C4',
+    shilo: '#e9bcb4',
+    pink: '#FF65C3',
+    orange: '#FCBD78',
+    fadedwhite: '#FAFAFC',
+    darkgrey: '#E5E5E7',
+    yellow: '#EFB05A',
+  }

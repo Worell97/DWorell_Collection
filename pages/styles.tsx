@@ -9,22 +9,23 @@ export const Header = styled.header`
 	align-items: center;
 	justify-content: center;
 	top: 0;
-	background-color: var(--primary);
-	color: var(--secondary);
+	background-color: var(--pink);
+	color: var(--primary);
 `
 
 export const NavMenu = styled.nav`
+	max-height: 10vh;
 	width: 100vw;
-	justify-content: space-between;
 	list-style-type: none;
 	padding-inline-start: .5vw;
 	padding-inline-end: .5vw;
 `;
 
 export const MenuItem = styled.li`
+	padding-top: 25px;
+	padding-left: 20px;
 	max-height: 10vh;
 	height: 80px;
-	padding: 16px;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
@@ -37,19 +38,11 @@ export const MenuItem = styled.li`
 `;
 
 export const Content = styled.div <Props>`
-	width: 100%;
 	display: flex;
-  position: relative;
-	flex-direction: column;
-	padding: 0 3% 4rem;
-	margin-left: 4.5rem;
-	transition: 300ms ease-in-out;
-	position: relative;
-	z-index: 2;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
 
-	${p => p.expanded} {
-		margin-left: 310px;
-	}
 `;
 
 export const Footer = styled.footer`
