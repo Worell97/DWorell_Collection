@@ -1,0 +1,32 @@
+* {
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+  color: var(--white);
+}
+
+:root {
+  --primary: #fbf3f3;
+  --secondary: #df9b9b;
+  --beautyBush: #EDC4C4;
+  --shilo: #e9bcb4;
+  --pink: #FF65C3;
+  --orange: #FCBD78;
+  --faded-white: #FAFAFC;
+  --dark-grey: #E5E5E7;
+  --yellow: #EFB05A;
+
+  --sidebar-width: 300px;
+} 
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+} 
+
+#root{
+  scroll-behavior: smooth;
+}
